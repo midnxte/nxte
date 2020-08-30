@@ -1,0 +1,28 @@
+{
+  "name": "nxte",
+  "version": "1.0.0",
+  "description": "a discord.js bot",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/midnxte/nxte.git"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "midnxte"
+  ],
+  "author": "midnxte",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/midnxte/nxte/issues"
+  },
+  "homepage": "https://github.com/midnxte/nxte#readme",
+  "dependencies": {
+    "discord.js": "^12.3.1",
+    "dotenv": "^8.2.0"
+  }
+}
