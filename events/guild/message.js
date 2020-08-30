@@ -2,12 +2,19 @@ require('dotenv').config();
 const prefix = process.env.PREFIX
 module.exports = async (client, message) => {
     if (message.channel.id === '749680884659126422')
-        if (!message.author.bot) client.channels.cache.get('729383866061815822').send(message.content)
+        if (!message.author.bot) {
+            client.channels.cache.get('729383866061815822').startTyping()
+            await client.channels.cache.get('729383866061815822').send(message.content)
+            await client.channels.cache.get('729383866061815822').stopTyping()
+        }
     if (message.channel.id === '729383866061815822')
-        if (!message.author.bot) client.channels.cache.get('749680884659126422').send(`${message.author.username} (${message.author.id}): ${message.content}`)
-
+        if (!message.author.bot) {
+            client.channels.cache.get('749680884659126422').send(`${message.author.username} (${message.author.id}): ${message.content}`)
+        }
     if (message.mentions.has(client.user)) {
         if (!message.author.bot) {
+            await message.channel.startTyping()
+
             return message.reply('Leave me alone, I\'m on a secret operation.')
         }
     }
@@ -23,7 +30,6 @@ module.exports = async (client, message) => {
 
     if (cmd.length === 0 || !command) return message.reply('Use a valid command.');
     else command.run(client, message, args);
-
 
 
 }
