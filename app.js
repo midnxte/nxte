@@ -7,8 +7,6 @@ client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
 dirs = ['command', 'event'];
 
-dirs.forEach((h) => {
-    require(`./handlers/${h}`)(client)
-})
+dirs.forEach((h) => require(`./handlers/${h}`)(client));
 
 client.login(process.env.DISCORD_TOKEN);
