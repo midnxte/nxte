@@ -18,5 +18,4 @@ module.exports = (client) => {
         }
     });
     console.log(`There are ${client.commands.size} commands available.`)
-
 }

@@ -1,6 +1,9 @@
 require('dotenv').config();
 const prefix = process.env.PREFIX
+const { checkUserPermissions, registerUser } = require('../../permissions')
 module.exports = async (client, message) => {
+    if (!message.member.user.bot) registerUser(message);
+
     if (message.channel.id === '749680884659126422')
         if (!message.author.bot) {
             client.channels.cache.get('749788255313985677').startTyping()
@@ -27,7 +30,7 @@ module.exports = async (client, message) => {
     const command = client.commands.get(cmd) || client.commands.get(client.aliases.get(cmd));
 
     if (cmd.length === 0 || !command) return message.reply('Use a valid command.');
-    else command.run(client, message, args);
+    else checkUserPermissions(command, client, message, args)
 
 
 }
