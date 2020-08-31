@@ -3,11 +3,11 @@ const prefix = process.env.PREFIX
 module.exports = async (client, message) => {
     if (message.channel.id === '749680884659126422')
         if (!message.author.bot) {
-            client.channels.cache.get('729383866061815822').startTyping()
-            await client.channels.cache.get('729383866061815822').send(message.content)
-            await client.channels.cache.get('729383866061815822').stopTyping()
+            client.channels.cache.get('749788255313985677').startTyping()
+            await client.channels.cache.get('749788255313985677').send(message.content)
+            await client.channels.cache.get('749788255313985677').stopTyping()
         }
-    if (message.channel.id === '729383866061815822')
+    if (message.channel.id === '749788255313985677')
         if (!message.author.bot) {
             client.channels.cache.get('749680884659126422').send(`${message.author.username} (${message.author.id}): ${message.content}`)
         }
