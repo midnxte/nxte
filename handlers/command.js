@@ -16,6 +16,7 @@ module.exports = (client) => {
                 command.aliases.forEach((a) => client.aliases.set(a, command.name))
             }
         }
-        console.log(`There are ${client.commands.size} commands available.`)
     });
+    console.log(`There are ${client.commands.size} commands available.`)
+
 }
